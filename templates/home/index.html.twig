@@ -1,12 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}MonBlog!{% endblock %}
 
 {% block body %}
     <main class="container">
         <div class="row">
             <div class="col-md-8">
                 <h3 class="fst-italic border-bottom">Articles récents</h3>
+                <div id="article-list">
+                    {% include 'article/list.html.twig' with {articles} %}
+                </div>
             </div>
             <div class="col-md-4">
                 <div class="position-sticky" style="top: 2rem">

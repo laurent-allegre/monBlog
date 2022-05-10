@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use App\Model\TimestampedInterface;
 use App\Repository\PageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PageRepository::class)]
-class Page
+class Page implements TimestampedInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -91,5 +92,15 @@ class Page
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    public function getUpdateAt(): ?\DateTimeInterface
+    {
+        // TODO: Implement getUpdateAt() method.
+    }
+
+    public function setUpdateAt(?\DateTimeInterface $updateAt)
+    {
+        // TODO: Implement setUpdateAt() method.
     }
 }
